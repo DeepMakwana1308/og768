@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Swap Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div class="particles-container" id="particles-container"></div>
+    
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-animation">
+            <div class="loading-circle"></div>
+            <div class="loading-text">Loading Skill Swap Platform</div>
+        </div>
+    </div>
+
+    <header class="header glass-effect">
+        <div class="container">
+            <h1 class="logo gradient-text">
+                <i class="fas fa-exchange-alt"></i>
+                Skill Swap Platform
+            </h1>
+            <nav class="nav">
+                <a href="index.html" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="profile.html" class="nav-link">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="requests.html" class="nav-link">
+                    <i class="fas fa-handshake"></i>
+                    <span>Requests</span>
+                </a>
+                <a href="login.html" class="nav-link" id="auth-link">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Login</span>
+                </a>
+            </nav>
+            <div class="header-controls">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Exchange Skills,
+                        <span class="gradient-text">Build Connections</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Connect with talented individuals worldwide. Share your expertise and learn new skills through our innovative skill-swapping platform.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="10000">0</div>
+                            <div class="stat-label">Active Users</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="500">0</div>
+                            <div class="stat-label">Skills Available</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="25000">0</div>
+                            <div class="stat-label">Successful Swaps</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-cards">
+                        <div class="skill-card floating" style="--delay: 0s">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-card floating" style="--delay: 0.5s">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-card floating" style="--delay: 1s">
+                            <i class="fas fa-paint-brush"></i>
+                            <span>Design</span>
+                        </div>
+                        <div class="skill-card floating" style="--delay: 1.5s">
+                            <i class="fas fa-guitar"></i>
+                            <span>Music</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Search Section -->
+        <section class="search-section glass-effect">
+            <div class="container">
+                <div class="search-header">
+                    <h2>Find Your Perfect Skill Match</h2>
+                    <p>Use our AI-powered search to discover the best learning opportunities</p>
+                </div>
+                
+                <div class="advanced-search">
+                    <div class="search-bar-container">
+                        <div class="search-bar">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" placeholder="Search by name, skill, or expertise..." id="search-input" autocomplete="off">
+                            <div class="search-suggestions" id="search-suggestions"></div>
+                        </div>
+                        <button class="search-btn gradient-bg" id="search-btn">
+                            <i class="fas fa-search"></i>
+                            <span>Search</span>
+                        </button>
+                    </div>
+                    
+                    <div class="filters-container">
+                        <div class="filter-group">
+                            <label>Location</label>
+                            <select id="location-filter" class="filter-select">
+                                <option value="">All Locations</option>
+                                <option value="new-york">New York</option>
+                                <option value="london">London</option>
+                                <option value="tokyo">Tokyo</option>
+                                <option value="paris">Paris</option>
+                                <option value="berlin">Berlin</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label>Availability</label>
+                            <select id="availability-filter" class="filter-select">
+                                <option value="">All Times</option>
+                                <option value="weekends">Weekends</option>
+                                <option value="evenings">Evenings</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label>Skill Level</label>
+                            <select id="level-filter" class="filter-select">
+                                <option value="">All Levels</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                                <option value="expert">Expert</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label>Rating</label>
+                            <select id="rating-filter" class="filter-select">
+                                <option value="">All Ratings</option>
+                                <option value="5">5 Stars</option>
+                                <option value="4">4+ Stars</option>
+                                <option value="3">3+ Stars</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Skills Section -->
+        <section class="trending-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-fire"></i>
+                    Trending Skills
+                </h2>
+                <div class="trending-skills" id="trending-skills">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Users Section -->
+        <section class="featured-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-star"></i>
+                    Featured Skill Masters
+                </h2>
+                <div class="featured-users" id="featured-users">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Users Grid -->
+        <section class="users-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-users"></i>
+                        Discover Talented People
+                    </h2>
+                    <div class="view-controls">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="users-grid" id="users-grid">
+                    <!-- Users will be populated by JavaScript -->
+                </div>
+
+                <div class="pagination" id="pagination">
+                    <button class="page-btn" data-page="prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="page-btn active" data-page="1">1</button>
+                    <button class="page-btn" data-page="2">2</button>
+                    <button class="page-btn" data-page="3">3</button>
+                    <button class="page-btn" data-page="4">4</button>
+                    <button class="page-btn" data-page="5">5</button>
+                    <button class="page-btn" data-page="6">6</button>
+                    <button class="page-btn" data-page="7">7</button>
+                    <button class="page-btn" data-page="next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Recommendations Section -->
+        <section class="recommendations-section glass-effect">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-robot"></i>
+                    AI Recommendations For You
+                </h2>
+                <div class="recommendations-grid" id="recommendations-grid">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Action Button -->
+    <div class="fab-container">
+        <button class="fab gradient-bg" id="quick-match-btn" title="Quick Match">
+            <i class="fas fa-magic"></i>
+        </button>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- User Profile Modal -->
+    <div class="modal" id="profile-modal">
+        <div class="modal-content glass-effect">
+            <span class="close" id="close-modal">&times;</span>
+            <div class="profile-view" id="profile-view">
+                <!-- Profile content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Swap Request Modal -->
+    <div class="modal" id="swap-modal">
+        <div class="modal-content glass-effect">
+            <span class="close" id="close-swap-modal">&times;</span>
+            <div class="swap-request-form">
+                <h2>
+                    <i class="fas fa-handshake"></i>
+                    Create Swap Request
+                </h2>
+                <form id="swap-form">
+                    <div class="form-group">
+                        <label>Choose one of your offered skills:</label>
+                        <select id="my-skill" required class="form-select">
+                            <option value="">Select your skill</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Choose one of their wanted skills:</label>
+                        <select id="their-skill" required class="form-select">
+                            <option value="">Select their skill</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Message:</label>
+                        <textarea id="swap-message" placeholder="Write a personalized message..." required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary gradient-bg">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Request
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="cancel-swap">
+                            <i class="fas fa-times"></i>
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Match Modal -->
+    <div class="modal" id="quick-match-modal">
+        <div class="modal-content glass-effect">
+            <span class="close" id="close-quick-match">&times;</span>
+            <div class="quick-match-content">
+                <h2>
+                    <i class="fas fa-magic"></i>
+                    AI Quick Match
+                </h2>
+                <p>Let our AI find the perfect skill match for you!</p>
+                <div class="quick-match-options">
+                    <div class="option-card" data-type="learn">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>I want to learn</h3>
+                        <p>Find someone to teach you a new skill</p>
+                    </div>
+                    <div class="option-card" data-type="teach">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h3>I want to teach</h3>
+                        <p>Share your expertise with others</p>
+                    </div>
+                    <div class="option-card" data-type="both">
+                        <i class="fas fa-exchange-alt"></i>
+                        <h3>Skill Exchange</h3>
+                        <p>Perfect mutual skill swap</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
