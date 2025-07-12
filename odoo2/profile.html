@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Skill Swap Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Skill Swap Platform</h1>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="profile.html" class="nav-link active">Profile</a>
+                <a href="requests.html" class="nav-link">Requests</a>
+                <a href="#" class="nav-link" id="logout-link">Logout</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="profile-container">
+                <form class="profile-form" id="profile-form">
+                    <div class="profile-header">
+                        <div class="profile-photo-section">
+                            <div class="profile-photo" id="profile-photo">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <input type="file" id="photo-input" accept="image/*" style="display: none;">
+                            <button type="button" class="btn btn-secondary" id="upload-photo">Upload Photo</button>
+                        </div>
+                        <div class="profile-info">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" id="location" name="location">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h3>Skills Offered</h3>
+                        <div class="skills-input">
+                            <input type="text" id="skill-offered-input" placeholder="Add a skill you can teach">
+                            <button type="button" class="btn btn-secondary" id="add-skill-offered">Add</button>
+                        </div>
+                        <div class="skills-list" id="skills-offered-list">
+                            <!-- Skills will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h3>Skills Wanted</h3>
+                        <div class="skills-input">
+                            <input type="text" id="skill-wanted-input" placeholder="Add a skill you want to learn">
+                            <button type="button" class="btn btn-secondary" id="add-skill-wanted">Add</button>
+                        </div>
+                        <div class="skills-list" id="skills-wanted-list">
+                            <!-- Skills will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h3>Availability</h3>
+                        <div class="availability-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="availability" value="weekends">
+                                <span>Weekends</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="availability" value="evenings">
+                                <span>Evenings</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="availability" value="flexible">
+                                <span>Flexible</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h3>Privacy Settings</h3>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="public-profile" name="public-profile">
+                            <span>Make profile public</span>
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-secondary" id="discard-btn">Discard</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="profile.js"></script>
+</body>
+</html>
