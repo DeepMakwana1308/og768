@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Requests - Skill Swap Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Skill Swap Platform</h1>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="profile.html" class="nav-link">Profile</a>
+                <a href="requests.html" class="nav-link active">Requests</a>
+                <a href="#" class="nav-link" id="logout-link">Logout</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="requests-container">
+                <div class="requests-tabs">
+                    <button class="tab-btn active" data-tab="received">Received Requests</button>
+                    <button class="tab-btn" data-tab="sent">Sent Requests</button>
+                </div>
+
+                <div class="tab-content active" id="received-tab">
+                    <div class="requests-list" id="received-requests">
+                        <!-- Received requests will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="tab-content" id="sent-tab">
+                    <div class="requests-list" id="sent-requests">
+                        <!-- Sent requests will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="pagination" id="requests-pagination">
+                    <button class="page-btn" data-page="prev">&lt;</button>
+                    <button class="page-btn active" data-page="1">1</button>
+                    <button class="page-btn" data-page="2">2</button>
+                    <button class="page-btn" data-page="3">3</button>
+                    <button class="page-btn" data-page="next">&gt;</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rating Modal -->
+    <div class="modal" id="rating-modal">
+        <div class="modal-content">
+            <span class="close" id="close-rating-modal">&times;</span>
+            <div class="rating-form">
+                <h2>Rate & Feedback</h2>
+                <form id="rating-form">
+                    <div class="form-group">
+                        <label>Rating:</label>
+                        <div class="star-rating" id="star-rating">
+                            <i class="fas fa-star" data-rating="1"></i>
+                            <i class="fas fa-star" data-rating="2"></i>
+                            <i class="fas fa-star" data-rating="3"></i>
+                            <i class="fas fa-star" data-rating="4"></i>
+                            <i class="fas fa-star" data-rating="5"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Feedback:</label>
+                        <textarea id="feedback" placeholder="Share your experience..." required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-secondary" id="cancel-rating">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="requests.js"></script>
+</body>
+</html>
